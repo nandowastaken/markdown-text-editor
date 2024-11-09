@@ -10,7 +10,8 @@ class MarkdownEditor(tk.Tk):
         
         # Configurações da janela principal
         self.title("Markdown Editor")
-        self.geometry("800x600")
+        self.geometry("1280x600")
+        self.resizable(False, True)
         
         # Dividir a tela com áreas para Markdown e HTML
         self.create_widgets()
@@ -28,8 +29,11 @@ class MarkdownEditor(tk.Tk):
         self.html_view.bind("<1>", lambda e: "break")
 
         # Botão de atualizar
-        self.update_button = ttk.Button(self, text="Renderizar Markdown", command=self.render_markdown)
-        self.update_button.pack(side=tk.BOTTOM, pady=10)
+        #self.update_button = ttk.Button(self, text="Renderizar Markdown", command=self.render_markdown)
+        #self.update_button.pack(side=tk.BOTTOM, pady=10)
+
+        # Vincular o evento de atualização automática ao campo de texto Markdown
+        self.markdown_text.bind("<KeyRelease>", lambda event: self.render_markdown())
 
     def render_markdown(self):
         # Obter o texto do editor Markdown
