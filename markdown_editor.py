@@ -61,7 +61,6 @@ class MarkdownEditor(tk.Tk):
         self.clear_button.configure(style="Custom.TButton")
         self.save_button.configure(style="Custom.TButton")
         self.open_button.configure(style="Custom.TButton")
-        self.create_button.configure(style="Custom.TButton")
         self.toggle_button.configure(style="Custom.TButton")
         
         # Configuração do estilo dos botões
@@ -115,10 +114,6 @@ class MarkdownEditor(tk.Tk):
         # Botão para Abrir um arquivo
         self.open_button = ttk.Button(self.frame, text="Abrir", command=self.open_file)
         self.open_button.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
-        
-        # Botão para Criar novo arquivo
-        self.create_button = ttk.Button(self.frame, text="Criar", command=lambda: self.create_file())
-        self.create_button.grid(row=2, column=0, padx=5, pady=5, sticky="ew")
         
         # Botão para alternar o modo escuro
         self.toggle_button = ttk.Button(self.frame, text="Dark Mode", command=self.toggle_dark_mode)
